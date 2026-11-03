@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BookList } from '../../components/book-list/book-list';
-
+import { Book } from '../../../../shared/models/book';
 @Component({
   imports: [BookList],
   selector: 'app-list',
@@ -9,17 +9,33 @@ import { BookList } from '../../components/book-list/book-list';
 })
 export class List {
 
-  // books = []; // depuis l'api
+  books : Book[] = [
+    {
+      title: 'Clean Code',
+      authorName: 'Robert C. Martin',
+      genre: 'Software Engineering',
+      price: 29.99,
+      published: '2008-08-01',
+      isbn: '978-0132350884'
+    }
+  ];
 
-  // selectBook(book : any){
-  //   //
-  // }
+  headers: { headerName: string; fieldName: keyof Book }[] = [
 
-  messageStatut : boolean =false;
+    { headerName: 'Title', fieldName: 'title' },
+    { headerName: 'Author', fieldName: 'authorName' },
+    { headerName: 'Genre', fieldName: 'genre' },
+    { headerName: 'Price', fieldName: 'price' },
+    { headerName: 'Published', fieldName: 'published' },
+  ]
 
-  incresLike(newStatus : boolean){
-      this.messageStatut = newStatus;
+
+
+
+
+
+  selectBook(book : Book):void{
+    //
   }
-
 
 }
