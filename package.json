@@ -7,6 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:run": "ng test --watch=false",
+    "test:ui": "ng test --ui",
     "serve:ssr:Bookstore": "node dist/Bookstore/server/server.mjs"
   },
   "private": true,
